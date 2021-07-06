@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
 // Components
 import NavBar from './components/NavBar';
@@ -10,10 +12,31 @@ import home from './pages/home';
 import login from './pages/login';
 import signup from './pages/signup';
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#ff795e',
+      main: '#f44333',
+      dark: '#b90008',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#66ffa6',
+      main: '#00e676',
+      dark: '#00b248',
+      contrastText: '#000',
+    }
+  },
+  typography: {
+    useNextVariants: true
+  }
+})
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <MuiThemeProvider theme={theme}>
+        <div className="App">
         <Router>
         <NavBar/>
           <div className="container">
@@ -24,10 +47,25 @@ class App extends Component {
             </Switch>
           </div>          
         </Router>
-
       </div>
+      </MuiThemeProvider>      
     );
   }  
 }
 
 export default App;
+
+
+function fizzbuzz() {
+    for (let i = 1; i <= 100; i++) {
+      let message = ""
+      if(!(i % 3)) {
+        message += "Fizz";
+      }
+      if(!(i % 5)) {
+          message += "Buzz";
+      }
+      console.log(message || i);
+    };
+  }
+
