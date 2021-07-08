@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 // Components
 import NavBar from './components/NavBar';
@@ -54,18 +54,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-function fizzbuzz() {
-    for (let i = 1; i <= 100; i++) {
-      let message = ""
-      if(!(i % 3)) {
-        message += "Fizz";
-      }
-      if(!(i % 5)) {
-          message += "Buzz";
-      }
-      console.log(message || i);
-    };
-  }
-
