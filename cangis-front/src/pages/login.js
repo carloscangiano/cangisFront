@@ -27,12 +27,12 @@ class login extends Component {
             password: '',
             errors: {}
         }
-    }
+    };
     componentWillReceiveProps(nextProps){
         if(nextProps.UI.errors){
             this.setState({ errors: nextProps.UI.errors});
         };
-    }
+    };
     handleSubmit = (event) => {
         event.preventDefault();
         const userData = {
@@ -44,8 +44,7 @@ class login extends Component {
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
-        })
-
+        });
     };
     render() {
         const { classes, UI: { loading } } = this.props;
@@ -105,7 +104,7 @@ class login extends Component {
             </Grid>
         )
     }
-}
+};
 
 login.propTypes = {
     classes: PropTypes.object.isRequired,
@@ -121,6 +120,6 @@ const mapStateToProps = (state) => ({
 
 const mapActionsToProps = {
     loginUser
-}
+};
 
 export default connect(mapStateToProps, mapActionsToProps)(withStyles(styles)(login));

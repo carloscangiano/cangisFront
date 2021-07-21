@@ -29,12 +29,12 @@ class signup extends Component {
             handle: '',
             errors: {}
         }
-    }
+    };
     componentWillReceiveProps(nextProps){
         if(nextProps.UI.errors){
             this.setState({ errors: nextProps.UI.errors});
         };
-    }
+    };
     handleSubmit = (event) => {
         event.preventDefault();
         this.setState({
@@ -136,7 +136,7 @@ class signup extends Component {
             </Grid>
         )
     }
-}
+};
 
 signup.propTypes = {
     classes: PropTypes.object.isRequired,
