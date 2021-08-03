@@ -23,49 +23,49 @@ import { logoutUser, uploadImage } from '../redux/actions/userActions';
 const styles = (theme) => ({
     paper: {
         padding: 20
-      },
-      profile: {
+    },
+    profile: {
         '& .image-wrapper': {
-          textAlign: 'center',
-          position: 'relative',
-          '& button': {
+            textAlign: 'center',
+            position: 'relative',
+            '& button': {
             position: 'absolute',
             top: '80%',
             left: '70%'
-          }
+            }
         },
         '& .profile-image': {
-          width: 200,
-          height: 200,
-          objectFit: 'cover',
-          maxWidth: '100%',
-          borderRadius: '50%'
+            width: 200,
+            height: 200,
+            objectFit: 'cover',
+            maxWidth: '100%',
+            borderRadius: '50%'
         },
         '& .profile-details': {
-          textAlign: 'center',
-          '& span, svg': {
+            textAlign: 'center',
+            '& span, svg': {
             verticalAlign: 'middle'
-          },
-          '& a': {
+            },
+            '& a': {
             color: '#00bcd4'
-          }
+            }
         },
         '& hr': {
-          border: 'none',
-          margin: '0 0 10px 0'
+            border: 'none',
+            margin: '0 0 10px 0'
         },
         '& svg.button': {
-          '&:hover': {
+            '&:hover': {
             cursor: 'pointer'
-          }
+            }
         }
-      },
-      buttons: {
+    },
+    buttons: {
         textAlign: 'center',
-        '& a': {
-          margin: '20px 10px'
+            '& a': {
+            margin: '20px 10px'
         }
-      }
+    }
 });
 
 class Profile extends Component {

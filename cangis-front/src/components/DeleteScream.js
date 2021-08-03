@@ -11,7 +11,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DeleteOutline from '@material-ui/icons/DeleteOutline';
 
 import { connect } from 'react-redux';
-import { deleteScream} from '../redux/actions/dataActions';
+import { deleteScream } from '../redux/actions/dataActions';
 
 const styles = {
     deleteButton: {
@@ -28,14 +28,14 @@ class DeleteScream extends Component {
     };
     handleOpen = () => {
         this.setState({ open: true });
-    }
+    };
     handleClose = () => {
         this.setState({ open: false });
-    }
+    };
     deleteScream = () => {
         this.props.deleteScream(this.props.screamId);
         this.setState({ open: false });
-    }
+    };
     render() {
         const { classes } = this.props;
         return (
@@ -69,7 +69,7 @@ class DeleteScream extends Component {
             </Fragment>
 
         )
-    }
+    };
 };
 
 DeleteScream.propTypres = {
