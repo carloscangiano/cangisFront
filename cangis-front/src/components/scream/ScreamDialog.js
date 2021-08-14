@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
+import MyButton from '../../util/MyButton';
+import LikeButton from '../scream/LikeButton';
 import withStyles from '@material-ui/core/styles/withStyles';
-import MyButton from '../util/MyButton';
-import LikeButton from './LikeButton';
 import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
+import Comments from './Comments.js';
+import PropTypes from 'prop-types';
 // MUI Stuff
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -17,15 +18,11 @@ import UnfoldMore from '@material-ui/icons/UnfoldMore';
 import ChatIcon from '@material-ui/icons/Chat';
 // Redux stuff
 import { connect } from 'react-redux';
-import { getScream } from '../redux/actions/dataActions';
-import Theme from '../util/theme';
+import { getScream } from '../../redux/actions/dataActions';
+import Theme from '../../util/theme';
 
 const styles = theme => ({
     ...Theme,
-    invisibleSeparator: {
-        border: 'none',
-        margin: 4
-    },
     profileImage: {
         maxWidth: 200,
         height: 200,
@@ -75,7 +72,8 @@ class ScreamDialog extends Component {
                 likeCount,
                 commentCount,
                 userImage,
-                userHandle
+                userHandle,
+                comments
             },
             UI: { 
                 loading
@@ -114,6 +112,8 @@ class ScreamDialog extends Component {
                         </MyButton>
                         <span>{commentCount} comments</span>
                     </Grid>
+                    <hr className={classes.visibleSeparator}/>
+                    <Comments comments={comments}/>
                 </Grid>
             );
         return (
