@@ -30,7 +30,7 @@ export default {
               margin: '10px auto 10px auto'
           },
           button: {
-              marginTop: 20,
+              marginTop: '3%',
               position: 'relative'
           },
           customError: {
@@ -39,7 +39,8 @@ export default {
               marginTop: 10
           },
           progress: {
-              position: 'absolute'
+              position: 'absolute',
+              color: '#808080'
           }
         },
         invisibleSeparator: {
